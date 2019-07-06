@@ -1,0 +1,24 @@
+<h1>List products:</h1>
+<form  #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+  <input type="hidden" name="id" [(ngModel)]="httpService.product.id">
+  <label>Код товара</label>
+  <input name="code"  [(ngModel)]="httpService.product.code"/>
+
+  <label>Наименование товара</label>
+  <input name="name"  [(ngModel)]="httpService.product.name"/>
+
+  <label>Детализация продукта</label>
+  <input name="phone" [(ngModel)]="httpService.product.details"/>
+  <label> Название компании</label>
+  <!--    <input type="hidden" name="company" />-->
+  <select class="form-control" name="company"  [(ngModel)]="httpService.product.company">
+    <option *ngFor="let c of httpService.companies"   [ngValue]="c"> {{c?.name}}</option>
+  </select>
+  <button mat-raised-button type="submit" color="warn"  >
+    Отправить
+  </button>
+</form>
+<ul *ngFor="let p of httpService.products" >
+  <li>{{p?.name}}, {{p?.code}}, {{p?.details}}, {{p?.company}}</li>
+</ul>
+
