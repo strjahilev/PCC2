@@ -19,4 +19,8 @@ onSubmit(companyForm: NgForm) {
     this.httpService.postCompany();
     console.log(this.httpService.company);
   }
+  delCompany(id: string) {
+    this.httpService.deleteCompany(id);
+    // this.httpService.getDataCompany();
+  }
 }
