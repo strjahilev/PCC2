@@ -22,6 +22,9 @@ export class ProductsComponent implements OnInit {
     this.httpService.postProduct();
     //   console.log(this.httpService.product);
   }
+  delProduct(id: string) {
+    this.httpService.deleteProduct(id);
+  }
 
   // onSubmit(productForm: NgForm) {
   //   this.httpService.postProduct();

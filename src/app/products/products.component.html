@@ -18,7 +18,11 @@
     Отправить
   </button>
 </form>
-<ul *ngFor="let p of httpService.products" >
-  <li>{{p?.name}}, {{p?.code}}, {{p?.details}}, {{p?.company}}</li>
+<ul   [(ngModel)]="httpService.product">
+  <li *ngFor="let p of httpService.products">{{p?.name}}, {{p?.code}}, {{p?.details}}, {{p?.company}}
+    <button mat-raised-button type="submit" color="accent" (click) = "delProduct(p?._id)"> Удалить</button>
+  </li>
+
+
 </ul>
 

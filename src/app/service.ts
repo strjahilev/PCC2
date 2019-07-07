@@ -27,4 +27,7 @@ export class HttpService {
   deleteCompany(idCompany: string ) {
     return this.http.delete('http://localhost:8081/api/companies/' + idCompany).subscribe((id: Company ) => this.companies.push(id));
   }
+  deleteProduct(idProduct: string) {
+    return this.http.delete('http://localhost:8081/api/products/' + idProduct).subscribe((id: Product ) => this.products.push(id));
+  }
 }
