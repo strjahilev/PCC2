@@ -1,5 +1,5 @@
 <form  #companyForm="ngForm" (ngSubmit)="onSubmit(companyForm)">
-  <input type="hidden" name="id" [(ngModel)]="httpService.company.id">
+  <input  type="hidden" name="id" [(ngModel)]="httpService.company._id">
   <label>Название компании</label>
   <input name="name"  [(ngModel)]="httpService.company.name"/>
 
@@ -8,17 +8,20 @@
 
   <label>Телефон компании</label>
   <input name="phone" [(ngModel)]="httpService.company.phone"/>
-  <label> Название компании</label>
 
-  <button mat-raised-button type="submit" color="warn"  >
+
+
+  <button mat-raised-button type="submit" color="warn">
     Отправить
   </button>
 
+
 </form>
 <h1>List products:</h1>
-<ul name = "fieldName"  [(ngModel)]="httpService.company">
-  <li *ngFor="let c of httpService.companies">{{c?.id}}, {{c?.name}}, {{c?.street}}, {{c?.phone}}
+<ul name="fieldName" ngDefaultControl [(ngModel)]="httpService.company">
+  <li *ngFor="let c of httpService.companies; let i = index">{{i+1}},{{c?._id}}, {{c?.name}}, {{c?.street}}, {{c?.phone}}
     <button mat-raised-button type="submit" color="primary"  (click) = "delCompany(c?._id)">Удалить</button>
+    <button mat-raised-button type="submit" color="warn" (click) = "showforedit(c)">Редактировать</button>
   </li>
 </ul>
 

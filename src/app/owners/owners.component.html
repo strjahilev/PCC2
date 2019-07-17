@@ -1,0 +1,25 @@
+<form  #ownerForm="ngForm" (ngSubmit)="onSubmit(ownerForm)">
+  <input type="hidden" name="id" [(ngModel)]="httpService.owner._id">
+<!--  -->
+  <label>Имя владельца</label>
+  <input name="name"  [(ngModel)]="httpService.owner.name"/>
+
+  <label>Компании во владении</label>
+   <select name="companies"  [(ngModel)]="httpService.owner.companies" multiple>
+
+    <option *ngFor="let c of httpService.companies" [ngValue]="c"  > {{c?.name}}</option>
+  </select>
+  <button mat-raised-button type="submit" color="warn"  >
+    Отправить
+  </button>
+
+</form>
+
+
+<h1>List owners:</h1>
+<ul name="fieldName" ngDefaultControl >
+  <li *ngFor="let o of httpService.owners">{{o?._id}}, {{o?.name}}, {{o?.companies}}
+<!--    <button mat-raised-button type="submit" color="primary"  (click) = "delCompany(c?._id)">Удалить</button>-->
+<!--    <button mat-raised-button type="submit" color="warn" (click) = "showforedit(c)">Редактировать</button>-->
+  </li>
+</ul>

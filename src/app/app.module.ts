@@ -11,13 +11,15 @@ import {MatButtonModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpService} from './service';
 import {FormsModule} from '@angular/forms';
+import { OwnersComponent } from './owners/owners.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompaniesComponent,
     ProductsComponent,
-    HomeComponent
+    HomeComponent,
+    OwnersComponent
   ],
   imports: [
     BrowserModule,

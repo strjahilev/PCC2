@@ -1,4 +1,6 @@
+import {Owner} from './modelowner';
+
 export class Company {
-  constructor(_id: string, name: string, street: string, phone: string
+  constructor( name: string, street: string, phone: string
   ) {}
 }
