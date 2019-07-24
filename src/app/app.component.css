@@ -1,0 +1,13 @@
+.app-root {
+  background: aqua;
+}
+.headers{
+  height: 100px;
+}
+.col-lg-7 {
+  margin-top: auto;
+}
+button {
+  margin-left: 10px;
+}
+

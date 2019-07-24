@@ -3,6 +3,7 @@ import {HttpService} from '../service';
 import {NgForm} from '@angular/forms';
 import {Company} from '../models/modelcompany';
 import {Product} from '../models/modelproduct';
+import {stringify} from 'querystring';
 
 
 
@@ -13,7 +14,7 @@ import {Product} from '../models/modelproduct';
 })
 
 export class ProductsComponent implements OnInit {
-// selected: boolean = false;
+
 // wselected: boolean = false;
 
 
@@ -22,8 +23,11 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this.httpService.getDataProduct();
     this.httpService.getDataCompany();
-    // this.httpService.getCompanyById();
+
+
   }
+
+
 
   onSubmit(productForm: NgForm) {
     if (productForm.value.id == null) {
@@ -31,10 +35,11 @@ export class ProductsComponent implements OnInit {
 // this.wselected = true;
         this.httpService.postProduct();
         console.log(this.httpService.product);
+
     } else {
       this.httpService.updateProduct(productForm.value.id);
     }
-        //   console.log(this.httpService.product);
+
   }
   delProduct(id: string) {
     this.httpService.deleteProduct(id);

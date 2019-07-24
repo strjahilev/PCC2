@@ -19,7 +19,7 @@
 <h1>List owners:</h1>
 <ul name="fieldName" ngDefaultControl >
   <li *ngFor="let o of httpService.owners">{{o?._id}}, {{o?.name}}, {{o?.companies}}
-<!--    <button mat-raised-button type="submit" color="primary"  (click) = "delCompany(c?._id)">Удалить</button>-->
-<!--    <button mat-raised-button type="submit" color="warn" (click) = "showforedit(c)">Редактировать</button>-->
+    <button mat-raised-button type="submit" color="primary"  (click) = "delOwner(o?._id)">Удалить</button>
+    <button mat-raised-button type="submit" color="warn" (click) = "showforedit(o)">Редактировать</button>
   </li>
 </ul>

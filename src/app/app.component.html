@@ -1,15 +1,15 @@
-<div class="container-fluid">
-  <div class="row d-flex justify-content-center">
-    <div class="col-lg-8 row d-flex justify-content-center">
-      <button mat-raised-button color="warn"  routerLink="/">Домой</button>
-      <button mat-raised-button color="primary"  routerLink="/companies">Компании</button>
-      <button mat-raised-button color="accent" routerLink="/products">Продукты</button>
-      <button mat-raised-button color="yellow" routerLink="/owners">Владельцы компаний</button>
+<mat-toolbar class="container-fluid headers " color="blue">
+  <mat-toolbar-row class="row d-flex justify-content-center headers-row">
+    <div class="col-lg-7 row d-flex justify-content-center flex-lg-nowrap">
+      <button mat-raised-button class="col-lg-3" color="warn"  routerLink="/">Домой</button>
+      <button mat-raised-button class="col-lg-3" color="primary"  routerLink="/companies">Компании</button>
+      <button mat-raised-button class="col-lg-3" color="accent" routerLink="/products">Продукты</button>
+      <button mat-raised-button class="col-lg-3" color="yellow" routerLink="/owners">Владельцы компаний</button>
     </div>
-  </div>
-</div>
-<div class="container-fluid">
-  <div class="row">
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="container-fluid main">
+  <div class="row d-flex justify-content-center main-row">
     <router-outlet></router-outlet>
   </div>
 </div>

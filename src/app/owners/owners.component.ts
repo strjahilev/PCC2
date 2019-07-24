@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from '../service';
 import {NgForm} from '@angular/forms';
+import {Company} from '../models/modelcompany';
+import {Owner} from '../models/modelowner';
 
 @Component({
   selector: 'app-owners',
@@ -26,9 +28,19 @@ export class OwnersComponent implements OnInit {
       };
     }
   }
-
+  delOwner(id: string) {
+    this.httpService.deleteOwner(id);
+  }
   onSubmit(ownerForm: NgForm) {
-    this.httpService.postOwner();
+    if (ownerForm.value.id == null) {
+      this.httpService.postOwner();
+      console.log(this.httpService.owner);
+    } else {
+      // this.httpService.updateOwner(ownerForm.value.id);
+    }
     this.resetForm(ownerForm);
+  }
+  showforedit(owner: Owner ) {
+    this.httpService.owner = Object.assign({}, owner);
   }
 }
