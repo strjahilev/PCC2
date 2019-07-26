@@ -26,7 +26,16 @@ export class ProductsComponent implements OnInit {
 
 
   }
-
+  resetForm(productForm: NgForm) {
+    if (productForm != null)
+      productForm.reset();
+    this.httpService.product = {
+      code: '',
+      name: '',
+      details: '',
+      // company: []
+    };
+  }
 
 
   onSubmit(productForm: NgForm) {

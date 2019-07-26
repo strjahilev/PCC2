@@ -36,7 +36,7 @@ export class OwnersComponent implements OnInit {
       this.httpService.postOwner();
       console.log(this.httpService.owner);
     } else {
-      // this.httpService.updateOwner(ownerForm.value.id);
+      this.httpService.updateOwner(ownerForm.value.id);
     }
     this.resetForm(ownerForm);
   }

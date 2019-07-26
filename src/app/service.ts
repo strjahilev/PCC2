@@ -23,7 +23,8 @@ export class HttpService {
     return this.http.get(`http://localhost:8081/api/companies/${idCompany}`).subscribe((data: Company) => this.compid = data);
   }
   getDataProduct() {
-    return this.http.get('http://localhost:8081/api/products').subscribe((data: Product[] ) => {this.products = data});
+    return this.http.get('http://localhost:8081/api/products').subscribe((data: Product[] ) => {this.products = data;
+    console.log(data)});
   }
   getDataOwner() {
     return this.http.get('http://localhost:8081/api/owners').subscribe((data: Owner[]) => this.owners = data);

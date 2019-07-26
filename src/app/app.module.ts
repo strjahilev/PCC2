@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {HttpService} from './service';
 import {FormsModule} from '@angular/forms';
 import { OwnersComponent } from './owners/owners.component';
+import {JoinPipe} from './products/join.pipe';
 
 
 
@@ -21,7 +22,8 @@ import { OwnersComponent } from './owners/owners.component';
     CompaniesComponent,
     ProductsComponent,
     HomeComponent,
-    OwnersComponent
+    OwnersComponent,
+    JoinPipe
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { OwnersComponent } from './owners/owners.component';
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule
+
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

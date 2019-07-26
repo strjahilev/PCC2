@@ -13,22 +13,21 @@
     Отправить
   </button>
 </form>
-<h1>Список продуктов:</h1>
-<table border="3px solid">
-<tr>
-  <td>№ п/п</td>
-  <td>Название компании</td>
-  <td>Адресс</td>
-  <td>Телефон компании</td>
-</tr>
+<h1>Список компаний:</h1>
 
-<ol name="fieldName" ngDefaultControl [(ngModel)]="httpService.company">
-  <tr><li  *ngFor="let c of httpService.companies; let i = index"><td>{{c?.name}}</td> <td>{{c?.street}}</td> <td>{{c?.phone}}</td>
-    <button mat-raised-button type="submit" color="primary"  (click) = "delCompany(c?._id)">Удалить</button>
-    <button mat-raised-button type="submit" color="warn" (click) = "showforedit(c)">Редактировать</button>
-  </li></tr>
-</ol>
 
-</table>
+
+
+
+<ul  name="fieldName" ngDefaultControl [(ngModel)]="httpService.company">
+  <li class="row d-flex " *ngFor="let c of httpService.companies; let i = index">
+    <div class="col-lg-2 mr-0">{{c?.name}}</div>
+    <div class="col-lg-3">{{c?.street}}</div>
+    <div class="col-lg-3">{{c?.phone}}</div>
+    <button class="col-lg-2" mat-raised-button type="submit" color="primary"  (click) = "delCompany(c?._id)">Удалить</button>
+    <button class="col-lg-2" mat-raised-button type="submit" color="warn" (click) = "showforedit(c)">Редактировать</button>
+  </li>
+</ul>
+
 
 
